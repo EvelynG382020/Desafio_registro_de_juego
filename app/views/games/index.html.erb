@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Games</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rules</th>
+      <th>Cover Image</th>
+      <th>Pieces Images</th>
+      <th>Pdf Rules</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @games.each do |game| %>
+      <tr>
+        <td><%= game.name %></td>
+        <td><%= game.rules %></td>
+        <% if game.cover_image.attached? %>
+          <td>
+            <%= link_to rails_blob_path(game.cover_image, disposition:'attachment') do %>
+              <%= image_tag game.cover_image.variant(resize: "100x100", type: :grayscale) %>
+            <% end  %>
+            </td>
+        <% end  %>
+        <% if game.pieces_images.attached? %>
+          <td>
+            <% game.pieces_images.each do |img| %>
+              <%= link_to rails_blob_path(img, disposition:'attachment') do %>
+                <%= image_tag img.variant(resize: "100x100", type: :grayscale) %>
+              <% end %>
+            <% end %>
+          </td>
+        <% end %>
+        <% if game.pdf_rules.attached? %>
+          <td><%= link_to "Download PDF", rails_blob_path(game.pdf_rules, disposition:'attachment') %></td>
+        <% end  %>
+        <td><%= link_to 'Show', game %></td>
+        <td><%= link_to 'Edit', edit_game_path(game) %></td>
+        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Game', new_game_path %>
