@@ -1,24 +1,23 @@
-# README
+Desafío - Registro de juegos
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+"A Juan le gustan los juegos de mesa y constantemente está comprando uno nuevo. Por lo
+general, prefiere los juegos de tablero competitivos y que puedan desarrollar variadas
+estrategias.
+Cada vez que compra un juego nuevo, necesita recordar cuáles son las reglas y qué
+componentes o piezas tiene".
 
-Things you may want to cover:
+Como buen amigo, le propones desarrollar un sistema que le permita registrar cada uno de
+los juegos que ha comprado.
 
-* Ruby version
+Instrucciones
+● Identifica los modelos y sus relaciones.
+● El sistema almacena las reglas del juego en PDF, además del texto.
+● El sistema almacena una foto de la caja del tablero.
+● El sistema almacena las fotos de las piezas y partes del tablero.
+● Las fotos deben tener thumbnails de 100x100 en escala de grises.
+● Los archivos deben estar almacenados en S3.
+● Todos los archivos deben tener un link de descarga.
 
-* System dependencies
 
-* Configuration
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
